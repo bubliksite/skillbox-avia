@@ -27,16 +27,24 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .container {
-  display: none;
+  position: fixed;
+  display: flex;
   max-width: 666px;
   width: 100%;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.33s;
+  transition-property: opacity transform;
+  transform: translateX(200%);
+  opacity: 0;
 }
 
 .container.is-active {
-  display: flex;
+  transform: none;
+  opacity: 1;
 }
 
 .heading {
@@ -47,7 +55,7 @@ body {
 }
 
 .heading.is-final {
-  width: 430px;
+  max-width: 430px;
 }
 
 .content {
@@ -103,7 +111,7 @@ small {
 }
 
 .final {
-  width: 430px;
+  max-width: 430px;
 }
 
 .final .button {
@@ -131,8 +139,14 @@ small {
     background: none;
     flex-direction: column;
   }
+  .container {
+    padding: 15px;
+  }
   .button {
     margin-left: 0;
-    margin-top: 10px;
+    margin-top: 30px;
+  }
+  .thank-you {
+    font-size: 17px;
   }
 }
