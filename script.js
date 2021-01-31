@@ -15,7 +15,7 @@ let codeValue = document.getElementById('codeValue')
 let Number = ''
 let Code = ''
 
-setTimeout(showNumber, 500)
+setTimeout(showNumber, 1000)
 
 checkNumberForm.onsubmit = (event) => {
   event.preventDefault()
@@ -46,6 +46,7 @@ checkCodeForm.onsubmit = (event) => {
 finalButton.onclick = () => {
   finalContainer.classList.remove('is-active')
   checkNumberContainer.classList.add('is-active')
+  setTimeout(showNumber, 1000)
 }
 
 function showNumber() {
